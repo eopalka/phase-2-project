@@ -10,12 +10,17 @@
     <title>Phase_2Project</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <%# <link rel="stylesheet" href="/stylesheets/main.css" /> %>
+  <%# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> %>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
-
+    <div class="nav">
+      <% if logged_in? %>
+        <a href="/logout">Logout</a>
+        <a href="/posts">All Posts</a>
+        <a href="/posts/new">Create Post</a>
+      <%  end %>
+    </div>
         <%= yield %>
 
 
