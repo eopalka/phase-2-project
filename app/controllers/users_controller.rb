@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     #render login form
     get "/login" do
-        erb :login
+        erb :"/users/login"
     end
 
     #recieve the data (params) from the login form
@@ -12,12 +12,12 @@ class UsersController < ApplicationController
         #authenticate the user
         if @user && @user.authenticate(params[:password])
             #creating a key/value pair in the session hash using the users id to actually log them in
-            session[:user_id] = user.id
-            flash[:message] = "Nice to see ya #{@user.name}!"
+            session[:user_id] = @user.id
+            # flash[:message] = "Nice to see ya #{@user.name}!"
             #redirect to user's profile
             redirect "/users/#{@user.id}"
         else
-            flash[:errors] = "Please try again!"
+            # flash[:errors] = "Please try again!"
             redirect '/login'
         end
     end
@@ -28,18 +28,18 @@ class UsersController < ApplicationController
     end
 
     get '/signup' do
-        erb :signup
+        erb :"/users/signup"
     end
 
     post '/users' do
         @user = User.new(params)
         if @user.save
           session[:user_id] = @user.id
-          flash[:message] = "#{@user.name}, Welcome!"
+        #flash[:message] = "#{@user.name}, Welcome!"
           redirect "/users/#{@user.id}"
         else
           #not valid input
-          flash[:errors] = "Well that did not work because #{@user.errors.full_messages.to_sentence}"
+        #flash[:errors] = "Well that did not work because #{@user.errors.full_messages.to_sentence}"
           redirect '/signup'
         end
       end
