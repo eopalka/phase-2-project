@@ -24,14 +24,15 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  # helpers do
+  helpers do
   #   # returns boolean if user is logged in or not - double bang converts value
   #   def logged_in?
   #       !!current_user
   #   end
-  #   # def current_user
-  #   #   User.find_by(id: session[:user_id])
-  #   # end
+    #keeps track of the logged in user
+    def current_user
+      User.find_by(id: session[:user_id])
+    end
   #   # #authorization helper for editing & deleting posts
   #   # def authorized_to_edit?(post)
   #   #   post.user == current_user
@@ -42,6 +43,6 @@ class ApplicationController < Sinatra::Base
   # #       redirect '/login'
   # #     end
   # # end
-  # end
+  end
 
 end
