@@ -3,9 +3,10 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :author
-      t.integer :copyright_date
+      t.date :copyright_date
       t.string :image_url
       t.text :description
+      t.string :created_by
       t.integer :user_id
 
       t.timestamps null: false

@@ -1,19 +1,23 @@
 
 <h1><%= @post.title %></h1>
+<p>Author: <%= @post.author %></p>
+<p>Publication Date: <%= @post.copyright_date %></p>
 
 <img src="<%= @post.image_url %>" alt="<%= @post.title %>" height="200" width="200"><br>
 
-<strong><%= @post.created_at %></strong>
-<p><%= @post.description %></p>
-<p>By: <%= @post.user.name %></p>
+
+<p>User Review: <%= @post.description %></p>
+<p>By: <%= @post.created_by %></p>
+<strong>Created at: <%= @post.created_at %></strong>
 
 <% if authorized_to_edit?(@post) %>
 
-  <a href="/posts/<%= @post.id %>/edit">Edit Post</a>
-
   <form class="" action="/posts/<%= @post.id %>" method="post">
+  <a href="/posts/<%= @post.id %>/edit">Edit Post</a>
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="" value="Delete This Post">
   </form>
 
 <% end %>
+
+

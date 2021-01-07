@@ -2,9 +2,13 @@
 
 <% @posts.each do |post| %>
   <h4><a href="/posts/<%= post.id %>"><%= post.title %></a></h4>
-  <img src="<%= post.image_url %>" alt="<%= post.title %>" height="200" width="200"><br>
-  <strong><%= post.created_at %></strong>
-  <p><%= post.description %></p>
-  <p>By: <%= post.user %></p>
-  <%binding.pry%>
+<p>Author: <%= post.author %></p>
+<p>Publication Date: <%= post.copyright_date %></p>
+
+<img src="<%= post.image_url %>" alt="<%= post.title %>" height="200" width="200"><br>
+
+
+<p>User Review: <%= post.description %></p>
+<p>By: <%= post.created_by %></p>
+<strong>Created at: <%= post.created_at %></strong>
 <% end %>
