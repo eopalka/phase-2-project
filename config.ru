@@ -11,4 +11,6 @@ end
 #all controllers go in here in between 
 
 use UsersController
+use PostsController
+
 run ApplicationController
