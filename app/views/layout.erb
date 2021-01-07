@@ -24,11 +24,6 @@
     </div>
     <div class="wrapper">
 
-      <% if flash[:message] %>
-        <h3 style="color:green;"><%= flash[:message] %></h3>
-      <% elsif flash[:errors] %>
-        <h3 style="color:red;"><%= flash[:errors] %></h3>
-      <% end %>
 
         <%= yield %>
 
