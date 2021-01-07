@@ -6,7 +6,7 @@ end
 # Here is where I will mount other contoller "use"
 
 # I need this in order to send PATCH and DELETE requests
-#use Rack::MethodOveride
+use Rack::MethodOverride
 
 #all controllers go in here in between 
 
