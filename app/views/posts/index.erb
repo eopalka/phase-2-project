@@ -5,5 +5,6 @@
   <img src="<%= post.image_url %>" alt="<%= post.title %>" height="200" width="200"><br>
   <strong><%= post.created_at %></strong>
   <p><%= post.description %></p>
-  <p>By: <%= post.user.name %></p>
+  <p>By: <%= post.user %></p>
+  <%binding.pry%>
 <% end %>
