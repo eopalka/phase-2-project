@@ -1,0 +1,19 @@
+
+<h1><%= @post.title %></h1>
+
+<img src="<%= @post.image_url %>" alt="<%= @post.title %>" height="200" width="200"><br>
+
+<strong><%= @post.created_at %></strong>
+<p><%= @post.description %></p>
+<p>By: <%= @post.user.name %></p>
+
+<% if authorized_to_edit?(@post) %>
+
+  <a href="/posts/<%= @post.id %>/edit">Edit Post</a>
+
+  <form class="" action="/posts/<%= @post.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" name="" value="Delete This Post">
+  </form>
+
+<% end %>
