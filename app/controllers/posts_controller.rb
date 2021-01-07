@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
 
     post "/posts" do
-        @post = Post.new(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id)
+        @post = Post.new(params[:post])
         if @post.save
           redirect "/posts/#{@post.id}"
         else
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
     private
 
     def find_post
-      @post = Post.find(params[:id])
+      @post = Post.find_by_id(params[:id])
     end
 
 
