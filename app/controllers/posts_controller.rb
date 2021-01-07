@@ -39,8 +39,12 @@ class PostsController < ApplicationController
 
     patch '/posts/:id' do
         find_post
-        @post.update(title: params[:title], image_url: params[:image_url], description: params[:description])
-        redirect "/posts/#{@post.id}"
+        if params[:post][:title] == "" || params[:post][:author] == "" || params[:post] == nil
+          redirect "/posts/#{@post.id}/edit"
+        else
+          @post.update(params[:post])
+          redirect "/posts/#{@post.id}"
+        end
     end
 
     delete '/posts/:id' do
