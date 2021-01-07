@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 
     #render login form
     get "/login" do
-        erb :"/users/login"
+        if logged_in?
+            redirect "/users/#{current_user.id}"
+          else
+            erb :"/users/login"
+          end
     end
 
     #recieve the data (params) from the login form
