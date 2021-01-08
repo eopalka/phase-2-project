@@ -1,6 +1,25 @@
   
 
 
-<h1><%= @user.name %></h1>
+<h1>Hello, <%= @user.name %>!</h1>
 <br><br>
 <p>Email: <%= @user.email %></p>
+
+<p>Here are the books you have reviewed:</p>
+<% @user.posts.each do |post| %>
+
+  <h4><%= post.title %></h4>
+
+<p>Author: <%= post.author %></p>
+
+<p>Publication Date: <%= post.copyright_date %></p>
+
+<img src="<%= post.image_url %>" alt="<%= post.title %>" height="200" width="300"><br>
+
+
+<p>User Review: <%= post.description %></p>
+<p>By: <%= post.created_by %></p>
+
+<strong>Created at: <%= post.created_at %></strong>
+
+<% end %>
