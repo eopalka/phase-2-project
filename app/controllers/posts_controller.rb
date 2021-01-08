@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
     get '/posts/:id' do
         # id is coming from url - params
+        @posts = Post.all
         find_post
         erb :'posts/show'
     end
