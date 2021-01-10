@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-    #render login form
     get "/login" do
         if logged_in?
             redirect "/users/#{current_user.id}"
@@ -9,8 +7,7 @@ class UsersController < ApplicationController
           end
     end
 
-    #recieve the data (params) from the login form
-    post "/login" do 
+    post "/login" do #recieve the data (params) from the login form
     @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password])
             #creating a key/value pair in the session hash using the users id to actually log them in
@@ -44,8 +41,5 @@ class UsersController < ApplicationController
         session.clear
         redirect '/'
     end
-
-
-
 
 end
