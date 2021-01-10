@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
     #CRUD
     get '/posts' do
+        redirect_if_not_logged_in
         @posts = Post.all
         erb :'posts/index'
     end
