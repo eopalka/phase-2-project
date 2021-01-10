@@ -1,7 +1,9 @@
-<h1>All Posts</h1>
-
+<h2 style="color:#563f46;"><b>Check out the local reviews:</b></h2>
+    
 <% @posts.each do |post| %>
-  <h4><a href="/posts/<%= post.id %>"><%= post.title %></a></h4>
+
+<h3><a class= "btn-flat-large waves-effect waves-blue-grey darken-3 black-text" href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+
 <p>Author: <%= post.author %></p>
 <p>Publication Date: <%= post.copyright_date %></p>
 
@@ -11,4 +13,12 @@
 <p>User Review: <%= post.description %></p>
 <p>By: <%= post.created_by %></p>
 <strong>Created at: <%= post.created_at %></strong>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
 <% end %>
+</div>
+
+
+

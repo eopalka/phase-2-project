@@ -2,13 +2,13 @@
 
 
 <h1>Hello, <%= @user.name %>!</h1>
-<br><br>
-<p>Email: <%= @user.email %></p>
 
-<p>Here are the books you have reviewed:</p>
+<h5>Email: <%= @user.email %></h5>
+<br><br>
+<h2 style="color:#563f46;"><b> Here are your books:</b></h2>
 <% @user.posts.each do |post| %>
 
-  <h4><%= post.title %></h4>
+<h3><a class= "btn-flat-large waves-effect black-text" href="/posts/<%= post.id %>"><%= post.title %></a></h3>
 
 <p>Author: <%= post.author %></p>
 
@@ -21,5 +21,8 @@
 <p>By: <%= post.created_by %></p>
 
 <strong>Created at: <%= post.created_at %></strong>
-
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
+<div class="divider" style="color:#fff;background:#563f46"> </div>
 <% end %>
