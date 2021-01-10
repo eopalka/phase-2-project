@@ -9,6 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     
+<link rel="icon" href="/images/bookclublogo.PNG">
 
     <title>Book Club</title>
     <link rel="stylesheet" href="public/stylesheets/main.css" />
@@ -22,12 +23,14 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  </head>
-  <body style = "background-color: #143e4c;">
+  </head> 
+  
+  <body style = "background-color: #8ca3a3;">
     <nav>
-    <div class="nav-wrapper blue-grey darken-3">
-      <a href="#" class="brand-logo">Book Club</a>
+    <div class="nav-wrapper" style="color:#fff;background:#484f4f"> 
+      <a  class="brand-logo"> <i style= "padding-left: 50px;" class="large material-icons">book</i>Book Club</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <% if logged_in? %>
           <li><a href="/posts">All Posts</a></li>
@@ -45,7 +48,7 @@
         
       
 
-    <div  class="container" >
+    <div  class="container" style= "display: flex; min-height: 100vh; flex-direction: column;" >
 
 
        <%= yield %>
@@ -58,6 +61,16 @@
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
     <![endif]-->
-  </body>
   
-</html>
+
+
+          <footer class="page-footer" style="color:#fff;background:#484f4f;">
+          <div class="footer-copyright" style="color:#fff;background:#484f4f">
+            <div class="container">
+            © 2021 Elisa's Copyright Text
+            
+             <a class="grey-text text-lighten-4 right" href="https://flatiron-stats.herokuapp.com/">Design help by Charles</a>
+            </div>
+          </div>
+        </footer>
+  </body>
