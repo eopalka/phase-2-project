@@ -12,16 +12,4 @@ class Post < ActiveRecord::Base
         where("title LIKE ?", "%#{query}%")
     end
     
-    def self.alphabetize
-        order(title: :asc)
-    end
-    
-    def self.by_author(author)
-        where(author: author)
-    end
-    
-    def self.all_authors
-        self.pluck(:author).uniq
-    end
-    
 end
