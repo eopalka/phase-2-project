@@ -1,17 +1,19 @@
 class PostsController < ApplicationController
-
     #CRUD
     get '/posts' do
-        redirect_if_not_logged_in
+      redirect_if_not_logged_in
+      if params[:query] 
+        @posts = Post.search(params[:query])
+      else # search is not filled out so show all games
         @posts = Post.all
-        erb :'posts/index'
+      end
+      erb :'posts/index'
     end
 
     get '/posts/new' do
         redirect_if_not_logged_in
         erb :'/posts/new'
     end
-
 
     post "/posts" do
         @post = Post.new(params[:post])
@@ -59,11 +61,16 @@ class PostsController < ApplicationController
         end
     end
 
+
+  
+
+
     private
 
     def find_post
       @post = Post.find_by_id(params[:id])
     end
+
 
 
 end
