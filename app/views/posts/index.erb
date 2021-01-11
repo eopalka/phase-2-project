@@ -1,4 +1,13 @@
 <h2 style="color:#563f46;"><b>Check out the local reviews:</b></h2>
+
+<form action="/posts" method="get">
+  <div class="row" style="margin-bottom: 0;">
+    <div class="col s5 input-field" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
+      <input type="text" name="query" id="query" placeholder="Enter Title Search">
+    </div>
+  </div>
+  <input type="submit" style="color:#fff;background:#563f46" value="Search" class="btn">
+</form>
     
 <% @posts.each do |post| %>
 
