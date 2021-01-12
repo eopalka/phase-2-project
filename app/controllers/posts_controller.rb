@@ -4,6 +4,8 @@ class PostsController < ApplicationController
       redirect_if_not_logged_in
       if params[:query] 
         @posts = Post.search(params[:query])
+      elsif params[:filter]
+        @posts = Post.by_author(params[:filter])
       else # search is not filled out so show all games
         @posts = Post.all
       end

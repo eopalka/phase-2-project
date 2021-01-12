@@ -11,5 +11,13 @@ class Post < ActiveRecord::Base
     def self.search(query)
         where("title LIKE ?", "%#{query}%")
     end
+
+    def self.by_author(author)
+        where(author: author)
+    end
+    
+    def self.all_authors
+        self.pluck(:author).uniq
+    end
     
 end

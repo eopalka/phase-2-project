@@ -8,6 +8,19 @@
   </div>
   <input type="submit" style="color:#fff;background:#563f46" value="Search" class="btn">
 </form>
+
+
+<form action="/posts" method="get">
+  <div class="input-field">
+    <select name="filter">
+      <option value="" disabled selected>Filter By Author:</option>
+      <% Post.all_authors.each do |author| %>
+        <option value="<%= author %>"> <%= author %></option>
+      <% end %>
+    </select>
+  </div>
+  <input type="submit" style="color:#fff;background:#563f46" value="Filter by Author" class="btn">
+</form>
     
 <% @posts.each do |post| %>
 
@@ -31,3 +44,8 @@
 
 
 
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
