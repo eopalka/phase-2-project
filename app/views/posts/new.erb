@@ -4,19 +4,19 @@
 
 <form class="" action="/posts" method="post">
   <label style="color:#563f46" for="title">Title:</label>
-  <input class="white" type="text" name="post[title]" value="">
+  <input type="text" name="post[title]" value="">
 
   <label style="color:#563f46" for="author">Author:</label>
-  <input class="white" type="text" name="post[author]" value="">
+  <input  name="post[author]" value="">
   
   <label style="color:#563f46" for="copyright_date">Date Published:</label>
-  <input class="white" type="date" name="post[copyright_date]" value="">
+  <input type="date" name="post[copyright_date]" value="">
 
   <label style="color:#563f46" for="image_url">Image URL:</label>
-  <input class="white" type="text" name="post[image_url]" value="">
+  <input type="text" name="post[image_url]" value="">
   
   <label style="color:#563f46" for="description">Review:</label>
-  <input class="white" type="text" name="post[description]" value="">
+  <input type="text" name="post[description]" value="">
 
   <input type="hidden" name="post[user_id]" value="<%=current_user.id%>">
   <input type="hidden" name="post[created_by]" value="<%=current_user.name%>">

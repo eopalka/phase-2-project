@@ -31,7 +31,7 @@
     <nav>
     <div class="nav-wrapper" style="color:#fff;background:#484f4f"> 
       <a  class="brand-logo"> <i style= "padding-left: 50px;" class="large material-icons">book</i>Book Club</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right">
           <% if logged_in? %>
           <li><a href="/posts">All Posts</a></li>
           <li><a href="/users/<%=@current_user.id%>">My Posts</a></li>
@@ -71,4 +71,32 @@
             </div>
           </div>
         </footer>
+
   </body>
+
+<script>
+
+.topnav {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px; 
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+  	input[type="text"]
+{
+    background: transparent;
+    border: none;
+} 
+</script>
