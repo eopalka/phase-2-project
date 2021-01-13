@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
     #CRUD
+
+    #READ
     get '/posts' do
       redirect_if_not_logged_in
-      if params[:query] 
+      if params[:query] #search bar
         @posts = Post.search(params[:query])
-      elsif params[:filter]
+      elsif params[:filter] #filter by author drop down 
         @posts = Post.by_author(params[:filter])
-      else # search is not filled out so show all games
+      else # search/filter is not filled out so show all games
         @posts = Post.all
       end
       erb :'posts/index'
@@ -17,7 +19,8 @@ class PostsController < ApplicationController
         erb :'/posts/new'
     end
 
-    post "/posts" do
+      #CREATE
+    post '/posts' do
         @post = Post.new(params[:post])
         if @post.save
           redirect "/posts/#{@post.id}"
@@ -43,6 +46,7 @@ class PostsController < ApplicationController
         end
     end
 
+      #UPDATE
     patch '/posts/:id' do
         find_post
         if params[:post][:title] == "" || params[:post][:author] == "" || params[:post] == nil
@@ -53,6 +57,7 @@ class PostsController < ApplicationController
         end
     end
 
+    #DELETE
     delete '/posts/:id' do
         find_post
         if authorized_to_edit?(@post)
